@@ -8,7 +8,7 @@ Please include a summary of the changes and the related issue.
 - [ ] 📌 Fix (버그 수정)
 - [ ] 🔖 Documentation Update (문서의 추가, 수정, 삭제)
 - [ ] 🎨 Style (CSS 및 UI 디자인 변경)
-- [ ] ⚙️ Extra (변수명 변경)
+- [ ] ⚙️ Rename (변수명 변경)
 - [ ] 🔎 Code Refactor (코드 리팩토링)
 - [ ] ✅ Test (테스트 코드 추가)
 - [ ] 🤖 Build (빌드)
