@@ -1,21 +1,22 @@
-# Description
+# 설명
 
-## What type of PR is this?
+## 무슨 종류의 PR인지?
 
 - [ ] 🕹️ Feat 
 - [ ] 📌 Fix
-- [ ] 🔖 Documentation Update  
+- [ ] 🔖 Documentation Update
+- [ ] 🎨 Style 
 - [ ] 🔎 Code Refactor 
 - [ ] ✅ Test 
 - [ ] 🤖 Build 
 - [ ] 📦 Release 
 - [ ] ⏩ Revert 
 
-# How to Run?
+# 어떻게 테스트 되었는가?
 
-- [ ] Test 코드 작성
-- [ ] Preview Page
+- [ ] 테스트 코드 작성
+- [ ] 로컬환경에서 수동 테스트 진행
 
-# Ticket number:
+# 티켓 번호:
 
 
