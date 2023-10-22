@@ -9,7 +9,7 @@
 - [ ] 🔎 Code Refactor 
 - [ ] ✅ Test 
 - [ ] 🤖 Build 
-- [ ] 📦 Release 
+- [ ] 📦 Chore
 - [ ] ⏩ Revert 
 
 # 어떻게 테스트 되었는가?
