@@ -1,21 +1,10 @@
 /*github.com/jgthms/minireset.css를 참고하여 reset css를 추가하였습니다.*/
+
 html,
 body,
 p,
-ol,
 ul,
 li,
-dl,
-dt,
-dd,
-blockquote,
-figure,
-fieldset,
-legend,
-textarea,
-pre,
-iframe,
-hr,
 h1,
 h2,
 h3,
@@ -40,36 +29,12 @@ ul {
   list-style: none;
 }
 
-button,
-input,
-select {
-  margin: 0;
-}
-
 html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-img,
-video {
+img{
   height: auto;
   max-width: 100%;
 }
 
-iframe {
-  border: 0;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td,
-th {
-  padding: 0;
-}
