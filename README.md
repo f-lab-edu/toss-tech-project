@@ -3,7 +3,7 @@
 
 ## 실행하는 법
 ```
-$ git clone https://github.com/f-lab-edu/toss-tech-project
+$ git clone https://github.com/f-lab-edu/toss-tech-project.git
 $ npm install
 $ npm run dev
 ```
