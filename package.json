@@ -1,14 +1,17 @@
 {
   "name": "toss-tech-project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "토스 테크 블로그를 클론 코딩 하는 프로젝트입니다.",
+  "main": "app.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-  "author": "",
+  "author": {
+    "name": "han jaehyeok",
+    "email": "andyhanjaehyeok.1123@gmail.com"
+  },
   "license": "ISC",
   "devDependencies": {
     "vite": "^4.5.0"
