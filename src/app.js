@@ -1,1 +1,3 @@
-console.log("hello");
+const test = a => {
+  console.log(a);
+};
