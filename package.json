@@ -1,7 +1,7 @@
 {
   "name": "toss-tech-project",
   "version": "1.0.0",
-  "description": "토스 테크 블로그를 클론 코딩 하는 프로젝트입니다.",
+  "description": "토스 테크 블로그를 클론 코딩 하는 프로젝트입니다",
   "main": "app.js",
   "scripts": {
     "dev": "vite",
