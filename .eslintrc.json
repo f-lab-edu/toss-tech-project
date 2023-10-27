@@ -1,10 +1,12 @@
-// {
-//   "env": {
-//     "browser": true,
-//     "node": false
-//   },
-//   "extends": ["airbnb"],
-//   "rules": {
-//     "no-console": 1
-//   }
-// }
+{
+  "env": {
+    "browser": true,
+    "node": false
+  },
+  "extends": ["airbnb", "eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "no-console": 1,
+    "prettier/prettier": "error"
+  }
+}
