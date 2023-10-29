@@ -4,7 +4,7 @@ import detail from "../api/get-detail";
 
 const initMocks = () => {
   try {
-    const mockJSON = [main, detail].map((RestHandler) => {
+    const mockJSON = [main, detail].map(RestHandler => {
       return RestHandler();
     });
     const worker = setupWorker(...mockJSON);
