@@ -11,9 +11,11 @@ const initMocks = () => {
     worker.start();
     return true;
   } catch (error) {
-    console.error(`worker error: ${error}`);
+    if (import.meta.env.DEV) {
+      console.error(`worker error: ${error}`);
+    }
+    return false;
   }
-  return false;
 };
 
 export { initMocks };
