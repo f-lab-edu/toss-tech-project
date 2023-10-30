@@ -1,7 +1,7 @@
 import mainJSON from "../../__fixtures__/main.json";
 import detailJSON from "../../__fixtures__/detail.json";
 
-export function getData(target) {
+function getData(target) {
   try {
     switch (target) {
       case "main":
@@ -17,3 +17,5 @@ export function getData(target) {
     }
   }
 }
+
+export default getData;

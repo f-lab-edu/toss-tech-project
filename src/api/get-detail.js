@@ -1,5 +1,5 @@
-import { getData } from "../mock/get-data";
-import { handler } from "../mock/handler";
+import getData from "../mock/get-data";
+import handler from "../mock/handler";
 
 export default function getDetail() {
   return handler(
