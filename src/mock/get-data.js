@@ -9,7 +9,7 @@ export function getData(target) {
       case "detail":
         return detailJSON;
       default:
-        throw new Error(`NO DATA`);
+        throw new Error("NO DATA");
     }
   } catch (error) {
     if (import.meta.env.DEV) {
