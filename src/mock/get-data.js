@@ -1,9 +1,9 @@
 import mainJSON from "../../__fixtures__/main.json";
 import detailJSON from "../../__fixtures__/detail.json";
 
-function getData(json) {
+function getData(target) {
   try {
-    switch (json) {
+    switch (target) {
       case "main":
         return mainJSON;
       case "detail":
