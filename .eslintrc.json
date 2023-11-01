@@ -3,8 +3,11 @@
     "browser": true,
     "node": false
   },
-  "extends": ["airbnb"],
+  "extends": ["airbnb", "eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
   "rules": {
-    "no-console": 1
+    "no-console": "error",
+    "prettier/prettier": "error",
+    "import/prefer-default-export": "off"
   }
 }
