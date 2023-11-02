@@ -1,15 +1,16 @@
 import Main from "../view/page/main";
 import Detail from "../view/page/detail";
 import notFound from "../view/page/not-found";
+//Controller를 통해 화면을 담당하는 부분은 추후 티켓에서 구현 예정입니다.티켓번호:JAE-24
 
-export const root = document.querySelector("#app");
+const root = document.querySelector("#app");
 
-export const routes = [
+const routes = [
   { path: "/", Controller: Main },
   { path: "/detail/:id", Controller: Detail },
 ];
 
-export const pathToRegex = path =>
+const pathToRegex = path =>
   new RegExp(`^${path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)")}$`);
 
 export const render = (path, param) => {
