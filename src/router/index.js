@@ -1,66 +1,44 @@
-import { extractUrlParams } from "./extract-url-params";
+class Router {
+  constructor() {
+    this.routes = [];
+  }
+  /**
+   *
+   * @param {string} path - 특정 path를 문자열로 가져옵니다. 예: "/main"
+   * @param {function} render - 화면에 보여질 내용을 함수로 가져옵니다. Todo: //티켓: JAE-28에서 추후 구현 예정
+   * @returns {new Router()}  - 생성할 라우터의 인스턴스를 반환합니다.
+   */
+  addRoute(pattern, render) {
+    const regexString = new RegExp(`^${pattern}$`);
+    this.routes.push({ regexString, render });
+    return this;
+  }
 
-const ROUTE_PARAMETER_REGEXP = /:(\w+)/g;
-const URL_FRAGMENT_REGEXP = "([^\\/]+)";
+  setNotFound(render) {
+    this.unmatchedRoute = render;
+    return this;
+  }
 
-export default function createRouter() {
-  const routes = [];
-  let notFound = () => {};
-
-  const checkRoutes = () => {
-    const { pathname } = window.location;
-    const currentRoute = routes.find(route => {
-      return route.testRegExp.test(pathname);
-    });
-
+  navigate(path) {
+    const currentRoute = this.routes.find(value =>
+      value.regexString.test(path),
+    );
     if (!currentRoute) {
-      notFound();
+      this.unmatchedRoute();
       return;
     }
-    const urlParams = extractUrlParams(currentRoute, pathname);
+    const params = path.match(currentRoute.regexString);
+    currentRoute.render(params[1]);
+  }
 
-    currentRoute.render(urlParams);
-  };
-
-  const router = {
-    /**
-     *
-     * @param {string} path - 특정 path를 문자열로 가져옵니다. 예: "/detail/:id"
-     * @param {[object]} views - 객체를 배열 형태로 받아옵니다. 예: [{Controller:Main},{Controller:Detail}]
-     * @returns {router} - addRoute, setNotFound, navigate, start를 메서드로 가지고 있는 router객체를 반환합니다.
-     */
-    addRoute(path, render) {
-      const params = [];
-      const pattern = path
-        .replace(ROUTE_PARAMETER_REGEXP, (__, paramName) => {
-          params.push(paramName);
-          return URL_FRAGMENT_REGEXP;
-        })
-        .replace(/\//g, "\\/");
-
-      routes.push({
-        testRegExp: new RegExp(`^${pattern}`),
-        render,
-        params,
-      });
-      return this;
-    },
-
-    setNotFound(render) {
-      notFound = render;
-      return this;
-    },
-
-    navigate(path) {
-      window.history.pushState(null, null, path);
-      checkRoutes();
-    },
-
-    start() {
-      checkRoutes();
-      window.addEventListener("popstate", checkRoutes);
-    },
-  };
-
-  return router;
+  start() {
+    window.addEventListener("DOMContentLoaded", () => {
+      this.navigate(window.location.pathname);
+    });
+    window.addEventListener("popstate", () => {
+      this.navigate(window.location.pathname);
+    });
+  }
 }
+
+export default Router;
