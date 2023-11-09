@@ -4,7 +4,7 @@ class Router {
   }
   /**
    *
-   * @param {string} path - 특정 path를 문자열로 가져옵니다. 예: "/main"
+   * @param {string} pattern - 패턴을 문자열로 가져옵니다. 예: "/" , "/detail/(\\w+)"
    * @param {function} render - 화면에 보여질 내용을 함수로 가져옵니다. Todo: //티켓: JAE-28에서 추후 구현 예정
    * @returns {new Router()}  - 생성할 라우터의 인스턴스를 반환합니다.
    */
