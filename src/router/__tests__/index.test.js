@@ -20,17 +20,17 @@ describe("Rourer", () => {
   });
 
   test("should verify that the showNotFound function is working properly", () => {
-    const notFoundFunction = jest.fn();
+    const showNotFound = jest.fn();
     const pageFunction = jest.fn();
-    router.setNotFound(notFoundFunction);
+    router.setNotFound(showNotFound);
     router.addRoute("/", pageFunction);
     router.navigate("/hello");
-    expect(notFoundFunction).toHaveBeenCalled();
+
+    expect(showNotFound).toHaveBeenCalled();
   });
 
   test("should return correct parameter when the match function works properly", () => {
     const pageFunction = jest.fn();
-
     const path = "/detail/2";
     router.addRoute("/detail/(\\w+)", pageFunction);
     const match = path.match(router.routes[0].regexString);
