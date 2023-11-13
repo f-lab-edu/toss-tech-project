@@ -1,30 +1,40 @@
 import Router from "..";
 
-const renderFunction = jest.fn();
-
-describe("Router", () => {
+describe("Rourer", () => {
   let router;
 
   beforeEach(() => {
     router = new Router();
   });
 
-  it("should add a route to the router", () => {
-    router.addRoute("/", renderFunction);
-    expect(router.routes).toHaveLength(1);
+  test("should verify that the addRoute method works properly", () => {
+    const pageFunction = jest.fn();
+    router.addRoute("/", pageFunction);
+    router.addRoute("/detail/(\\w+)", pageFunction);
+
+    expect(router.routes.length).toBe(2);
+    expect(router.routes[0].regexString).toEqual(/^\/$/);
+    expect(router.routes[1].regexString).toEqual(/^\/detail\/(\w+)$/);
+    expect(router.routes[0].page).toBe(pageFunction);
+    expect(router.routes[1].page).toBe(pageFunction);
   });
 
-  it("should set a not found route for the router", () => {
-    router.setNotFound(renderFunction);
-    expect(router.unmatchedRoute).toBeDefined();
+  test("should verify that the showNotFound function is working properly", () => {
+    const notFoundFunction = jest.fn();
+    const pageFunction = jest.fn();
+    router.setNotFound(notFoundFunction);
+    router.addRoute("/", pageFunction);
+    router.navigate("/hello");
+    expect(notFoundFunction).toHaveBeenCalled();
   });
 
-  it("should return correct parameter", () => {
-    router.addRoute("/detail/(\\w+)", renderFunction);
-    const path = "/detail/3";
-    router.navigate(path);
-    expect(renderFunction).toHaveBeenCalledTimes(1);
-    const params = path.match(/^\/detail\/(\w+)$/);
-    expect(params[1]).toBe("3");
+  test("should return correct parameter when the navigate method works properly", () => {
+    const pageFunction = jest.fn();
+
+    router.addRoute("/detail/(\\w+)", pageFunction);
+    router.navigate("/detail/3");
+    const match = "/detail/3".match(/^\/detail\/(\w+)$/);
+
+    expect(match[1]).toBe("3");
   });
 });

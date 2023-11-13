@@ -4,31 +4,36 @@ class Router {
   }
   /**
    *
-   * @param {string} pattern - 패턴을 문자열로 가져옵니다. 예: "/" , "/detail/(\\w+)"
-   * @param {function} render - 화면에 보여질 내용을 함수로 가져옵니다. Todo: //티켓: JAE-28에서 추후 구현 예정
+   * @param {string} pattern - 특정 pattern을 문자열로 가져옵니다. 예: '/' , '/detail/(\\w+)"
+   * @param {function} page - 화면에 보여질 내용을 함수로 가져옵니다. Todo: //티켓: JAE-28에서 추후 구현 예정
    * @returns {new Router()}  - 생성할 라우터의 인스턴스를 반환합니다.
    */
-  addRoute(pattern, render) {
+  addRoute(pattern, page) {
     const regexString = new RegExp(`^${pattern}$`);
-    this.routes.push({ regexString, render });
+    this.routes.push({ regexString, page });
     return this;
   }
 
-  setNotFound(render) {
-    this.unmatchedRoute = render;
+  setNotFound(page) {
+    this.showNotFound = page;
     return this;
   }
 
   navigate(path) {
-    const currentRoute = this.routes.find(value =>
-      value.regexString.test(path),
-    );
-    if (!currentRoute) {
-      this.unmatchedRoute();
+    let match;
+    const currentRoute = this.routes.find(value => {
+      match = path.match(value.regexString);
+      if (match) {
+        return true;
+      }
+    });
+
+    if (!match) {
+      this.showNotFound();
       return;
     }
-    const params = path.match(currentRoute.regexString);
-    currentRoute.render(params[1]);
+
+    currentRoute.page(match[1]);
   }
 
   start() {
