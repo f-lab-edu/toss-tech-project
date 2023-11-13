@@ -28,13 +28,13 @@ describe("Rourer", () => {
     expect(notFoundFunction).toHaveBeenCalled();
   });
 
-  test("should return correct parameter when the navigate method works properly", () => {
+  test("should return correct parameter when the match function works properly", () => {
     const pageFunction = jest.fn();
 
+    const path = "/detail/2";
     router.addRoute("/detail/(\\w+)", pageFunction);
-    router.navigate("/detail/3");
-    const match = "/detail/3".match(/^\/detail\/(\w+)$/);
+    const match = path.match(router.routes[0].regexString);
 
-    expect(match[1]).toBe("3");
+    expect(match[1]).toBe("2");
   });
 });
