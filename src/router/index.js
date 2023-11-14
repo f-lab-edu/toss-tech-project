@@ -20,20 +20,20 @@ class Router {
   }
 
   navigate(path) {
-    let match;
+    let matched;
     const currentRoute = this.routes.find(value => {
-      match = path.match(value.regexString);
-      if (match) {
+      matched = path.match(value.regexString);
+      if (matched) {
         return true;
       }
     });
 
-    if (!match) {
+    if (!matched) {
       this.showNotFound();
       return;
     }
 
-    currentRoute.page(match[1]);
+    currentRoute.page(matched[1]);
   }
 
   start() {
