@@ -3,8 +3,10 @@ import mainData from "../../../__fixtures__/main.json";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 
+const fixPath = "http://localhost/tossblog/v1";
+
 const server = setupServer(
-  rest.get("http://localhost/blog/main", (req, res, ctx) => {
+  rest.get(`${fixPath}/main`, (req, res, ctx) => {
     return res(ctx.json(mainData));
   }),
 );
