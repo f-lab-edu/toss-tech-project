@@ -1,16 +1,19 @@
-import axios from "axios";
 import getDetailData from "../detail";
+import detalData from "../../../__fixtures__/detail.json";
+import { rest } from "msw";
+import { setupServer } from "msw/node";
 
-jest.mock("axios");
+const server = setupServer(
+  rest.get("http://localhost/blog/detail/2", (req, res, ctx) => {
+    return res(ctx.json(detalData[2]));
+  }),
+);
 
-describe("getDetailData 함수가 올바르게 작동되는지 테스트 하기", () => {
-  test("mock데이터 안에 들어있는 데이터들을 올바른 api로 요청하였을경우 잘 받아오는지 확인하는 테스트.", async () => {
-    const id = "1";
-    const mockData = { data: { detail: `Detail data for id ${id}` } };
-    axios.get.mockResolvedValue(mockData);
-    const result = await getDetailData(id);
+beforeAll(() => server.listen());
 
-    expect(axios.get).toHaveBeenCalledWith(`/detail/${id}`);
-    expect(result).toEqual(mockData.data);
-  });
+test("getDetailData 함수가 잘 동작하여 데이터를 성공적으로 받아오는지 확인", async () => {
+  const result = await getDetailData(2);
+  expect(result).toEqual(detalData[2]);
 });
+
+afterAll(() => server.close());

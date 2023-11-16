@@ -1,15 +1,19 @@
-import axios from "axios";
 import getMainData from "../main";
+import mainData from "../../../__fixtures__/main.json";
+import { rest } from "msw";
+import { setupServer } from "msw/node";
 
-jest.mock("axios");
+const server = setupServer(
+  rest.get("http://localhost/blog/main", (req, res, ctx) => {
+    return res(ctx.json(mainData));
+  }),
+);
 
-describe("getMainData 함수가 올바르게 작동되는지 테스트 하기", () => {
-  test("mock데이터 안에 들어있는 데이터들을 올바른 api로 요청하였을경우 잘 받아오는지 확인하는 테스트.", async () => {
-    const mockData = { data: { articles: ["list1", "list2"] } };
-    axios.get.mockResolvedValue(mockData);
-    const result = await getMainData();
+beforeAll(() => server.listen());
 
-    expect(axios.get).toHaveBeenCalledWith("/main");
-    expect(result).toEqual(mockData.data.articles);
-  });
+test("getMainData 함수가 잘 동작하여 데이터를 성공적으로 받아오는지 확인", async () => {
+  const result = await getMainData();
+  expect(result).toEqual(mainData.articles);
 });
+
+afterAll(() => server.close());

@@ -1,15 +1,8 @@
-import responseData from "./response-data";
+import loadData from "./load-data";
 
 const getDetailData = async id => {
-  try {
-    const detailData = await responseData(`/detail/${id}`);
-    return detailData;
-  } catch (error) {
-    if (import.meta.env.DEV) {
-      console.error(`can not getDetailData:${error}`);
-    }
-    return null;
-  }
+  const contents = await loadData(`/detail/${id}`);
+  return contents;
 };
 
 export default getDetailData;
