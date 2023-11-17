@@ -1,8 +1,11 @@
-import loadData from "./load-data";
+import instance from "./axios";
+import { URL } from "./url";
 
-const getMainData = async () => {
-  const { articles } = await loadData("/main");
+const getMainList = async () => {
+  const { MAIN } = URL;
+  const { articles } = await instance.get(MAIN);
+  console.log(articles);
   return articles;
 };
 
-export default getMainData;
+export default getMainList;

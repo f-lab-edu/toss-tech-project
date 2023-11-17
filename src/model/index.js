@@ -1,9 +1,9 @@
-import getMainData from "./main";
-import getDetailData from "./detail";
+import getMainList from "./main";
+import getDetailContent from "./detail";
 
 function Model() {
-  this.mainData = async () => await getMainData();
-  this.detailData = async id => await getDetailData(id);
+  this.mainList = async () => await getMainList();
+  this.detailContent = async id => await getDetailContent(id);
 }
 
 export default Model;
