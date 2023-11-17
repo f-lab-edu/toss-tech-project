@@ -3,8 +3,8 @@ import { URL } from "./url";
 
 const getDetailContent = async id => {
   const { DETAIL } = URL;
-  const article = await instance.get(`${DETAIL}/${id}`);
-  return article;
+  const articleDetail = await instance.get(`${DETAIL}/${id}`);
+  return articleDetail;
 };
 
 export default getDetailContent;
