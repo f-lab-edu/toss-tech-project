@@ -22,8 +22,9 @@ instance.interceptors.response.use(async response => {
     return result;
   } catch (error) {
     if (import.meta.env.DEV) {
-      return Promise.reject(`인터셉터하여 응답도중 에러 발생: ${error}`);
+      console.error(`인터셉터하여 응답도중 에러 발생: ${error}`);
     }
+    return Promise.reject(error);
   }
 });
 
