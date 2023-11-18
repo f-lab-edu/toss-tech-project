@@ -1,9 +1,9 @@
-import instance from "./axios";
-import { URL } from "./url";
+import loadData from "./load-data";
+import URL from "./url";
 
 const getDetailContent = async id => {
-  const { DETAIL } = URL;
-  const articleDetail = await instance.get(`${DETAIL}/${id}`);
+  const articleDetail = await loadData(`${URL.detail}/${id}`);
+  console.log(articleDetail);
   return articleDetail;
 };
 
