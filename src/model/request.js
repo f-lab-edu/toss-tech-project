@@ -16,11 +16,8 @@ instance.interceptors.request.use(config => {
 
 instance.interceptors.response.use(async response => {
   try {
-    if (response.config.url.startsWith(URL.main)) {
-      response.status = 201;
-    } else if (response.config.url.startsWith(URL.detail)) {
-      response.status = 202;
-    }
+    if (response.config.url.startsWith(URL.main)) response.status = 201;
+    else if (response.config.url.startsWith(URL.detail)) response.status = 202;
     const result = await response.data;
     return result;
   } catch (error) {
