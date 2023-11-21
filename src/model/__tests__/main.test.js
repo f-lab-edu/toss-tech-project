@@ -1,6 +1,6 @@
 import getMainList from "../main";
 import mainList from "../../../__fixtures__/main.json";
-import URL from "../url";
+import { URL } from "../constant";
 import { server } from "./server";
 
 beforeAll(() => server(URL.main).listen());

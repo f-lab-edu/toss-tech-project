@@ -1,6 +1,6 @@
 import getDetailContent from "../detail";
 import articleContent from "../../../__fixtures__/detail.json";
-import URL from "../url";
+import { URL } from "../constant";
 import { server } from "./server";
 
 beforeAll(() => server(URL.detail, 2).listen());

@@ -1,5 +1,5 @@
 import loadData from "./load-data";
-import URL from "./url";
+import { URL } from "./constant";
 
 const getMainList = async () => {
   const { articles } = await loadData(URL.main);
