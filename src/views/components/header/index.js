@@ -4,11 +4,11 @@ import "./index.css";
 const headerTemplate = `
 <div id="header_container">
     <div id="header_outer_container">
-      <div id="header_inner_container">
-        <div id="header_logo_container">
-          <img src="${HEADER_LOGO}" alt="header_logo" id="logo_click" />
+        <div id="header_inner_container">
+            <div id="header_logo_container">
+                <img src="${HEADER_LOGO}" alt="header_logo" id="logo_click" />
+            </div>
         </div>
-      </div>
     </div>
 </div>
 `;
