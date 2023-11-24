@@ -16,19 +16,19 @@
     margin: 0 auto;
 }
 
-#outer_container{
+#header_outer_container{
     width: 92%;
     height: 60px;
     margin: 0 auto;
 }
 
-#inner_container{
+#header_inner_container{
     display: flex;
     height: 100%;
     width: 100%;
 }
 
-#logo_container{
+#header_logo_container{
     align-items: center;
     display: flex;
     width: 120px;
