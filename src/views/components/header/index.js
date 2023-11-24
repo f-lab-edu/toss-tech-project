@@ -2,14 +2,14 @@ import HEADER_LOGO from "../../../logo/header-logo/logo-image.png";
 import "./index.css";
 
 const headerTemplate = `
-<div id="container_default">
-  <div id="header_container">
-    <div id="inner_container">
-      <div id="logo_container">
-        <img src="${HEADER_LOGO}" alt="header_logo" id="logo_img" class="logo_click" />
+<div id="header_container">
+    <div id="outer_container">
+      <div id="inner_container">
+        <div id="logo_container">
+          <img src="${HEADER_LOGO}" alt="header_logo" id="logo_click" />
+        </div>
       </div>
     </div>
-  </div>
 </div>
 `;
 
