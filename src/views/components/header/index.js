@@ -16,7 +16,7 @@ const headerTemplate = `
 `;
 
 const headerComponent = () => {
-  const imageLogo = document.getElementById("header");
+  const imageLogo = document.getElementById("header"); //Todo: JAE-37 티켓이서 app 레이아웃 구현 예정입니다.
   imageLogo.innerHTML = headerTemplate;
 };
 
