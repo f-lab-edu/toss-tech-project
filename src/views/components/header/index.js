@@ -5,9 +5,9 @@ const headerTemplate = `
 <header id="header_container">
   <div id="header_inner_container">
     <a href="/" id="header_logo_container"> 
-      <span>
+      <div>
         <img src="${HEADER_LOGO}" alt="토스 로고 아이콘" />
-      </span>
+      </div>
     </a>
   </div>
 </header>
