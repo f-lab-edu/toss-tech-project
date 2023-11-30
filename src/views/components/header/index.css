@@ -14,13 +14,9 @@
 #header_logo_container {
     align-items: center;
     max-width: 120px;
-    height: 100%;
     width: 100%;
+    height: 100%;
     display: flex;
-}
-
-#toss_logo_icon {
-    cursor: pointer;
 }
 
 #header_logo_container img {

@@ -3,13 +3,13 @@ import "./index.css";
 
 const headerTemplate = `
 <header id="header_container">
-    <div id="header_inner_container">
-      <div id="header_logo_container">
-        <a href="/" id="toss_logo_icon">
-          <img src="${HEADER_LOGO}" alt="토스 로고 아이콘" />
-        </a>
-      </div>
-    </div>
+  <div id="header_inner_container">
+    <a href="/" id="header_logo_container"> 
+      <span>
+        <img src="${HEADER_LOGO}" alt="토스 로고 아이콘" />
+      </span>
+    </a>
+  </div>
 </header>
 `;
 
