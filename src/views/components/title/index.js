@@ -11,7 +11,7 @@ const titleTemplate = `
 `;
 
 const titleComponenet = () => {
-  const title = document.getElementById("title");
+  const title = document.getElementById("title"); //Todo: JAE-37 티켓에서 app 레이아웃 구현 예정입니다.
   title.innerHTML = titleTemplate;
 };
 
