@@ -1,0 +1,22 @@
+#title_container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+#title_inner_container {
+    width: 100%;
+}
+
+#development_container {
+    background-color: white;
+    display: inline-block;
+    padding: 20px 0px;
+    margin: 52px 0 32px 0; 
+}
+
+#development_container > h1 {
+    font-weight: 700;
+    font-size: 36px;
+}
