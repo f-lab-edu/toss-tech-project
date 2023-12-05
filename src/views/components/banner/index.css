@@ -1,0 +1,42 @@
+/*Todo: footer와 관련된 css 적용은 app구현체에서 진행할 예정입니다.
+        JAE-37에서 진행 예정.
+*/
+
+#banner_container {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    grid-column-gap: 20px;
+    align-items: center;
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#banner_logo_container {
+    max-width: 186px;
+    width: 100%;
+}
+
+#banner_logo_container img {
+    width: 100%;
+}
+
+#banner_title_container {
+    margin: 0;
+}
+
+#banner_title_container > h3 {
+    font-size: 26px;
+    line-height: 1.4;
+    color: white;
+}
+
+#banner_summary_container {
+    margin-top: 8px;
+}
+
+#banner_summary_container p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+}
