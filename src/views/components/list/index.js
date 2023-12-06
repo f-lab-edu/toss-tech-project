@@ -8,7 +8,7 @@ const listTemplate = `
             <div id="title_container">
                 <h1>개발</h1>
             </div>
-            <ul id="article_list"></ul>
+            <ul id="article_list_container"></ul>
         </div>
     </div>
 </main>  
@@ -42,12 +42,14 @@ const articleTemplate = (list, id) => `
 const listComponent = list => {
   listContainerRender();
   const listArr = Object.values(list).reverse();
-  const articleList = document.getElementById("article_list");
+  const articleListContainer = document.getElementById(
+    "article_list_container",
+  );
   listArr.forEach(value => {
     const li = document.createElement("li");
     li.id = value.id;
     li.innerHTML = articleTemplate(list, value.id);
-    articleList.appendChild(li);
+    articleListContainer.appendChild(li);
   });
 };
 
