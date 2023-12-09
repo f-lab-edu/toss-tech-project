@@ -42,9 +42,10 @@ const articleTemplate = (list, id) => `
 const listComponent = list => {
   listContainerRender();
   const listArr = Object.values(list);
-  const reverseList = listArr.map(
-    (_, index, array) => array[array.length - 1 - index],
-  );
+  const reverseList = listArr.reduce((accumulator, _, index, array) => {
+    accumulator[index] = array[array.length - 1 - index];
+    return accumulator;
+  }, []);
   const articleListContainer = document.getElementById(
     "article_list_container",
   );
