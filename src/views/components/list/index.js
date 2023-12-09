@@ -41,11 +41,14 @@ const articleTemplate = (list, id) => `
 //Todo: JAE_28 티켓에서 컨트롤러 구현을 통해 list를 받아올 예정입니다.
 const listComponent = list => {
   listContainerRender();
-  const listArr = Object.values(list).reverse();
+  const listArr = Object.values(list);
+  const reverseList = listArr.map(
+    (_, index, array) => array[array.length - 1 - index],
+  );
   const articleListContainer = document.getElementById(
     "article_list_container",
   );
-  listArr.forEach(value => {
+  reverseList.forEach(value => {
     const li = document.createElement("li");
     li.id = value.id;
     li.innerHTML = articleTemplate(list, value.id);

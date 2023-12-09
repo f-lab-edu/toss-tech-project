@@ -1,9 +1,9 @@
-const formatDate = inputDate => {
-  const year = inputDate.substring(0, 4);
-  const month = inputDate.substring(4, 6);
-  const day = inputDate.substring(6, 8);
-  const formatedDate = `${year}. ${month}. ${day}`;
-  return formatedDate;
+import { format, parse } from "date-fns";
+
+const formatDate = inputdate => {
+  const date = parse(inputdate, "yyyyMMdd", new Date());
+  const formattedDate = format(date, "yyyy. MM. dd");
+  return formattedDate;
 };
 
 export default formatDate;
