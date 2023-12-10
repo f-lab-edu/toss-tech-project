@@ -42,19 +42,13 @@ const articleTemplate = (list, id) => `
 const listComponent = list => {
   listContainerRender();
   const listArr = Object.values(list);
-  const reverseList = listArr.reduce((accumulator, _, index, array) => {
-    accumulator[index] = array[array.length - 1 - index];
-    return accumulator;
-  }, []);
-  const articleListContainer = document.getElementById(
-    "article_list_container",
-  );
-  reverseList.forEach(value => {
+  listArr.reduceRight((acc, value) => {
     const li = document.createElement("li");
     li.id = value.id;
     li.innerHTML = articleTemplate(list, value.id);
-    articleListContainer.appendChild(li);
-  });
+    acc.appendChild(li);
+    return acc;
+  }, document.getElementById("article_list_container"));
 };
 
 export default listComponent;
