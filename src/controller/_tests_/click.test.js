@@ -26,9 +26,11 @@ describe("클릭하였을때 정상적으로 눌러졌는지 테스트 하기", 
     expect(mockRouter.navigate).toHaveBeenCalledWith("/detail/1");
   });
   test("header에서 로고 클릭 시 router.navigate가 정상적으로 호출되어 url이 /로 변경되는지 확인", () => {
-    const header = document.getElementById("header_logo_container");
+    const headerLogoContainer = document.getElementById(
+      "header_logo_container",
+    );
     logoClick(mockRouter);
-    header.click();
+    headerLogoContainer.click();
     expect(mockRouter.navigate).toHaveBeenCalledWith("/");
   });
 });
