@@ -6,9 +6,7 @@ const initController = (router, model) => {
   const main = new MainController(router, model);
   const detail = new DetailController(router, model);
   const notFound = new NotFoundController(router);
-  if (main && detail && notFound) {
-    return true;
-  }
+  if (main && detail && notFound) return true;
   return false;
 };
 
