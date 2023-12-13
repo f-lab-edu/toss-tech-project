@@ -3,7 +3,7 @@ module.exports = {
   transform: {
     "^.+\\.(js)?$": "babel-jest",
   },
-  testEnvironment: "node",
+  testEnvironment: "jsdom",
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/$1",
   },
