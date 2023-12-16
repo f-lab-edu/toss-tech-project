@@ -12,10 +12,10 @@ const contentTemplate = (thumbnailImage, title, createdDate, body) => `
         <div id="detail_title_container">
           <h1>${title}</h1>
         </div>
-        <div id="detail_created_container">
+        <div id="detail_createdDate_container">
           <p>${formatDate(createdDate)}</p>
         </div>
-        <div id="detail_content_container">
+        <div id="detail_body_container">
           <p>${body}</p>
         </div>
       <section>
