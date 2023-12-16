@@ -30,7 +30,7 @@ const contentComponet = (articleItem, content) => {
     title,
     created_date: createdDate,
   } = articleItem;
-  const main = document.getElementById("main");
+  const main = document.getElementById("main"); //Todo: JAE-37 티켓에서 app 레이아웃 구현 예정입니다.
   main.innerHTML = contentTemplate(thumbnailImage, title, createdDate, content);
 };
 
