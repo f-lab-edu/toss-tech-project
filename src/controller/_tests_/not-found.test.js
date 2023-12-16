@@ -1,4 +1,3 @@
-// NotFoundController.test.js
 import NotFoundController from "../not-found";
 
 const mockRouter = {
