@@ -1,11 +1,11 @@
 import notFoundPage from "../views/pages/not-found"; //Todo: JAE-35 에서 만들어진 컴포넌트를 바탕으로 view 부분에서 화면에 연결할 예정입니다.
-import { logoClick } from "./click";
+import { addClickEventToLogo } from "./click";
 
 function NotFoundController(router) {
   this.notFoundPage = () => {
     try {
       notFoundPage();
-      logoClick(router);
+      addClickEventToLogo(router);
     } catch (error) {
       if (import.meta.env.DEV)
         console.error(

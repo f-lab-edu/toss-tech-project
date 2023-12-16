@@ -1,5 +1,5 @@
 import detailPage from "../views/pages/detail"; //Todo: JAE-35 에서 만들어진 컴포넌트를 바탕으로 view 부분에서 화면에 연결할 예정입니다.
-import { logoClick } from "./click";
+import { addClickEventToLogo } from "./click";
 
 function DetailController(router, model) {
   this.detailPage = async id => {
@@ -7,7 +7,7 @@ function DetailController(router, model) {
       const list = await model.mainList();
       const content = await model.detailContent(id);
       detailPage(list[id], content);
-      logoClick(router);
+      addClickEventToLogo(router);
     } catch (error) {
       if (import.meta.env.DEV)
         console.error(
