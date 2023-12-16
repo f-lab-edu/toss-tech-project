@@ -1,4 +1,4 @@
-export const contentClick = router => {
+export const addClickEventToItems = router => {
   const listContainer = document.querySelectorAll("li");
   listContainer.forEach(li => {
     li.addEventListener("click", () => {
@@ -8,7 +8,7 @@ export const contentClick = router => {
   });
 };
 
-export const logoClick = router => {
+export const addClickEventToLogo = router => {
   const logo = document.getElementById("header_logo_container");
   logo.addEventListener("click", e => {
     e.preventDefault();
