@@ -6,7 +6,7 @@ const contentTemplate = (createdDate, detailContent, image, title) => `
   <div id="detail_container">
     <div id="detail_inner_container">
       <div id="detail_img_container">
-        <img src="${image}" alt="상세 페이지에 들어있는 이미지" />
+        <img src="${image}" alt="썸네일" />
       </div>
       <section>
         <div id="detail_title_container">
