@@ -5,8 +5,8 @@ function DetailController(router, model) {
   this.detailPage = async id => {
     try {
       const list = await model.mainList();
-      const content = await model.detailContent(id);
-      detailPage(list[id], content);
+      const articleItem = await model.articleItem(id);
+      detailPage(articleItem);
       addClickEventToLogo(router);
     } catch (error) {
       if (import.meta.env.DEV)

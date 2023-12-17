@@ -3,7 +3,13 @@ import getDetailContent from "./detail";
 
 function Model() {
   this.mainList = async () => await getMainList();
-  this.detailContent = async id => await getDetailContent(id);
+  this.articleItem = async id => {
+    const [mainList, detailContent] = await Promise.all([
+      getMainList(),
+      getDetailContent(id),
+    ]);
+    return { ...mainList[id], detailContent };
+  };
 }
 
 export default Model;
