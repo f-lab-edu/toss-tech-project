@@ -1,12 +1,12 @@
 import "./index.css";
 import formatDate from "../list/format-date";
 
-const contentTemplate = (thumbnailImage, title, createdDate, body) => ` 
+const contentTemplate = (createdDate, detailContent, image, title) => ` 
 <main>
   <div id="detail_container">
     <div id="detail_inner_container">
       <div id="detail_img_container">
-        <img src="${thumbnailImage}" alt="상세 페이지에 들어있는 이미지" />
+        <img src="${image}" alt="상세 페이지에 들어있는 이미지" />
       </div>
       <section>
         <div id="detail_title_container">
@@ -16,7 +16,7 @@ const contentTemplate = (thumbnailImage, title, createdDate, body) => `
           <p>${formatDate(createdDate)}</p>
         </div>
         <div id="detail_body_container">
-          <p>${body}</p>
+          <p>${detailContent}</p>
         </div>
       <section>
     </div>
@@ -24,14 +24,15 @@ const contentTemplate = (thumbnailImage, title, createdDate, body) => `
 </main>
 `;
 
-const contentComponet = (articleItem, body) => {
+const contentComponet = articleItem => {
   const {
-    thumbnail_image: thumbnailImage,
-    title,
     created_date: createdDate,
+    detailContent,
+    thumbnail_image: image,
+    title,
   } = articleItem;
-  const main = document.getElementById("main"); //Todo: JAE-37 티켓에서 app 레이아웃 구현 예정입니다.
-  main.innerHTML = contentTemplate(thumbnailImage, title, createdDate, body);
+  const main = document.getElementById("main");
+  main.innerHTML = contentTemplate(createdDate, detailContent, image, title);
 };
 
 export default contentComponet;
