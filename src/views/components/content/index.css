@@ -30,11 +30,11 @@
     font-weight: 700;
 }
 
-#detail_created_container {
+#detail_createdDate_container {
     margin-top: 20px;
 }
 
-#detail_created_container p {
+#detail_createdDate_container p {
     color: #8b95a1;
 }
 
