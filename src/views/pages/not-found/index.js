@@ -1,9 +1,9 @@
-import logoComponent from "../../components/header";
+import headerComponent from "../../components/header";
 import errorComponent from "../../components/error";
 import bannerComponent from "../../components/banner";
 
 const notFoundPage = () => {
-  logoComponent();
+  headerComponent();
   errorComponent();
   bannerComponent();
 };

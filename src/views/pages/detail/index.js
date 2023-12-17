@@ -1,9 +1,9 @@
-import logoComponent from "../../components/header";
+import headerComponent from "../../components/header";
 import bannerComponent from "../../components/banner";
 import contentComponent from "../../components/content";
 
 const detailPage = articleItem => {
-  logoComponent();
+  headerComponent();
   contentComponent(articleItem);
   bannerComponent();
 };
