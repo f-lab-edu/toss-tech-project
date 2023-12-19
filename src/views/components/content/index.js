@@ -15,7 +15,7 @@ const contentTemplate = (createdDate, detailContent, image, title) => `
         <div id="detail_createdDate_container">
           <p>${formatDate(createdDate)}</p>
         </div>
-        <div id="detail_body_container">
+        <div id="detail_content_container">
           <p>${detailContent}</p>
         </div>
       <section>
