@@ -1,5 +1,5 @@
-import CreateRouter from "./router";
-import CreateModel from "./model";
+import Router from "./router";
+import Model from "./model";
 import initController from "./controller";
 import "./index.css";
 
@@ -11,8 +11,8 @@ import "./index.css";
 `;
   const app = document.getElementById("app");
   app.innerHTML = appTemplate;
-  const router = new CreateRouter();
-  const model = new CreateModel();
+  const router = new Router();
+  const model = new Model();
   const hasController = initController(router, model);
   if (hasController) {
     router.start();
