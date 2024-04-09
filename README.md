@@ -1,7 +1,7 @@
 # toss-tech-project - 외부 라이브러리 없이 단일 페이지만으로 프로젝트 구현 
 
 ## 프로젝트 소개
-[__프로젝트 테크 스펙__](https://docs.google.com/document/d/1H7k3PkoSgHrAg0R0HiyizthjCOSdHxnkbbe0axPBJGc/edit#heading=h.wzh86fhtffj7)을 작성하여 개발에 앞서 프로젝트의 구조를 설계, 개인의 사용경험을 통해 문제점을 효율적으로 풀 수 있게 사전에 정의 하였습니다. <br/>
+[__테크 스펙__](https://docs.google.com/document/d/1H7k3PkoSgHrAg0R0HiyizthjCOSdHxnkbbe0axPBJGc/edit#heading=h.wzh86fhtffj7)을 작성하여 개발에 앞서 프로젝트의 구조를 설계, 개인의 사용경험을 통해 문제점을 효율적으로 풀 수 있게 사전에 정의 하였습니다. <br/>
 기존 [__토스 블로그__](https://toss.tech/)를 참고하여 바닐라 JS로 SPA를 활용한 새로운 블로그를 만들어 보았습니다.
 
 ## 프로젝트 목표
