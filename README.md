@@ -13,10 +13,9 @@ MVC 패턴에 기반한 구조로 설계합니다.
 [__결과물 링크 열기__](https://toss-tech-project.vercel.app/) <br/>
 
 ## Preview
-### Main Page
-<img width="757" alt="스크린샷 2024-04-09 오후 1 03 11" src="https://github.com/f-lab-edu/toss-tech-project/assets/98483125/ee3336a7-929b-492d-9410-f6ff3c0e157e"> <br/>
-### Detail Page
-<img width="757" alt="스크린샷 2024-04-09 오후 1 04 16" src="https://github.com/f-lab-edu/toss-tech-project/assets/98483125/1a5dec7c-60a1-4fc7-8256-906e8688c10c">
+<img width="1597" alt="스크린샷 2024-07-03 오후 9 32 40" src="https://github.com/f-lab-edu/toss-tech-project/assets/98483125/4603ee52-1f7d-4c63-969b-12bdf24db2ce">
+
+
 
 ## 고민했던 부분
 [프로젝트를 진행하면서 깊게 고민했던 부분을 글로 서술해보았습니다.](https://velog.io/@kungfuk11/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-%EC%97%86%EC%9D%B4-Vanila-JS-%EB%A1%9C-SPA-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0)
